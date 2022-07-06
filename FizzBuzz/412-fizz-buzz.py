@@ -1,4 +1,8 @@
 class Solution:
+    """
+        :type n: int
+        :rtype: List[str]
+    """
     def fizzBuzz(self, n: int) -> List[str]:
         initial_list = []
         for i in range(1, n+1):
