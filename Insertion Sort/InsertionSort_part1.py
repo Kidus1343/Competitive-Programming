@@ -7,7 +7,7 @@ import re
 import sys
 
 #
-# Complete the 'insertionSort1' function below.
+# Complete the insertionSort1 function below.
 #
 # The function accepts following parameters:
 #  1. INTEGER n
