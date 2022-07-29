@@ -1,20 +1,15 @@
-def maxOperations(nums, k):
-    """
-    :type nums: List[int]
-    :type k: int
-    :rtype: int
-    """
-    # nums = nums
-    operation = 0
-        
-    for i in range(len(nums)):
-        
-        for j in range(len(nums)):
-                if i != j:
-                    if nums[i] + nums[j]==k  and nums[i] != k and nums[j] != k:
-                        
-                        nums[i]=0
-                        nums[j]=0
-                        operation += 1
-                    
-    return operation
+class Solution:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        operation = 0
+        l, r = 0, len(nums) - 1
+        for i in range(len(nums)):
+            if nums[l] + nums[r] == k and r > l:
+                l += 1
+                r -= 1
+                operation += 1
+            elif nums[l] + nums[r] > k and r > l:
+                r -= 1
+            elif nums[l] + nums[r] < k and r > l:
+                l += 1
+        return operation
